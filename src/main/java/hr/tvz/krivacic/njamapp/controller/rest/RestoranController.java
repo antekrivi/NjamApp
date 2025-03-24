@@ -32,5 +32,10 @@ public class RestoranController {
         return restoranServiceImpl.findRestoranByID(id);
     }
 
+    @GetMapping(params = {"adresa", "ocjena"})
+    public List<RestoranDTO> getNajblizi(@RequestParam final String adresa,
+                                         @RequestParam final Double ocjena){
+        return restoranServiceImpl.findNajblizi(adresa, ocjena);
+    }
 
 }

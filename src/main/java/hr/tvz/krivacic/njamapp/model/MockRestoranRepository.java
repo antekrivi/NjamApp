@@ -1,9 +1,10 @@
 package hr.tvz.krivacic.njamapp.model;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
-
+@Profile("prod")
 @Repository
 public class MockRestoranRepository implements RestoranRepository{
     private final List<Restoran> restorani = Arrays.asList(

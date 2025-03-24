@@ -2,6 +2,7 @@ package hr.tvz.krivacic.njamapp.model;
 
 import org.springframework.stereotype.Service;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -30,8 +31,12 @@ public class RestoranServiceImpl implements RestoranService{
     }
 
     @Override
-    public List<RestoranDTO> findNajblizi(String adresa) {
-        return null;
+    public List<RestoranDTO> findNajblizi(String adresa, Double ocjena) {
+        return restoranRepository.findAll()
+                .stream()
+                .filter(restoran -> restoran.getProsOcjenaKupca() > ocjena && restoran.getAdresa().contains(adresa))
+                .map(this::mapRestoranToRestoranDTO)
+                .collect(Collectors.toList());
     }
 
     @Override
