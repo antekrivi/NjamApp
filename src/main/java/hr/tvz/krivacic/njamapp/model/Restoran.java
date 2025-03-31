@@ -13,12 +13,14 @@ public class Restoran {
     private Integer prosVrijemeDostave;
     private Double prosOcjenaKupca;
     private Integer maxBrojNarudzbi;
+    private Integer michelinZvjezdice;
+    private String kratkiOpis;
 
-    public Restoran(Long id, String ime, String adresa, String brojTelefona,
-                    String email, Map<String, String> radnoVrijeme, Boolean trenutnoOtvoren,
-                    Integer prosVrijemeDostave, Double prosOcjenaKupca, Integer maxBrojNarudzbi) {
-        this.ID = id;
-        this.imeRestorana = ime;
+    public Restoran(Long ID, String imeRestorana, String adresa, String brojTelefona, String email,
+                    Map<String, String> radnoVrijeme, Boolean trenutnoOtvoren, Integer prosVrijemeDostave,
+                    Double prosOcjenaKupca, Integer maxBrojNarudzbi, Integer michelinZvjezdice, String kratkiOpis) {
+        this.ID = ID;
+        this.imeRestorana = imeRestorana;
         this.adresa = adresa;
         this.brojTelefona = brojTelefona;
         this.email = email;
@@ -27,7 +29,10 @@ public class Restoran {
         this.prosVrijemeDostave = prosVrijemeDostave;
         this.prosOcjenaKupca = prosOcjenaKupca;
         this.maxBrojNarudzbi = maxBrojNarudzbi;
+        this.michelinZvjezdice = michelinZvjezdice;
+        this.kratkiOpis = kratkiOpis;
     }
+
     public Long getID() {
         return ID;
     }
@@ -107,4 +112,21 @@ public class Restoran {
     public void setMaxBrojNarudzbi(Integer maxBrojNarudzbi) {
         this.maxBrojNarudzbi = maxBrojNarudzbi;
     }
+
+    public Integer getMichelinZvjezdice() {
+        return michelinZvjezdice;
+    }
+
+    public void setMichelinZvjezdice(Integer michelinZvjezdice) {
+        this.michelinZvjezdice = michelinZvjezdice;
+    }
+
+    public String getKratkiOpis() {
+        return kratkiOpis;
+    }
+
+    public void setKratkiOpis(String kratkiOpis) {
+        this.kratkiOpis = kratkiOpis;
+    }
+
 }
